@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Rincón del Taco</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="top-border"></div>
+    <h1>El Rincón del Taco</h1>
+    <p class="tagline">El sabor auténtico</p>
+    <div class="plate"><img src="assets/menu-tacos.png" alt="Tacos dorados"></div>
+  </header>
+
+  <main>
+    <section class="menu-intro">
+      <h2>Menú Digital</h2>
+      <p>Seleccione una categoría o toque un producto para ver más detalles.</p>
+      <div class="menu-tabs" aria-label="Filtros del menú">
+        <button class="tab-btn active" data-filter="all">Todo</button>
+        <button class="tab-btn" data-filter="individual">Individual</button>
+        <button class="tab-btn" data-filter="combos">Combos</button>
+        <button class="tab-btn" data-filter="extras">Extras</button>
+      </div>
+    </section>
+
+    <section class="menu-grid">
+      <article class="card menu-card" data-category="individual">
+        <h2>Menú Individual</h2>
+        <button class="item menu-item" data-name="Orden de Tacos Dorados (3 Pzas)" data-price="Q85.00" data-desc="Crujientes tacos dorados rellenos, acompañados de lechuga fresca, salsa de tomate de la casa y queso fresco espolvoreado." data-icon="taco-img" data-img="assets/menu-tacos.png">
+          <span class="icon"><img class="menu-taco-icon" src="assets/menu-tacos.png" alt="Tacos"></span>
+          <div>
+            <h3>Orden de Tacos Dorados (3 Pzas) <strong>Q85.00</strong></h3>
+            <p>Crujientes tacos dorados rellenos, acompañados de lechuga fresca, salsa de tomate de la casa y queso fresco espolvoreado.</p>
+            <small>Toque para ver detalle</small>
+          </div>
+        </button>
+        <button class="item menu-item" data-name="Café de la Casa" data-price="Q30.00" data-desc="Nuestro café tradicional, el acompañamiento perfecto." data-icon="☕">
+          <span class="icon">☕</span>
+          <div>
+            <h3>Café de la Casa <strong>Q30.00</strong></h3>
+            <p>Nuestro café tradicional, el acompañamiento perfecto.</p>
+            <small>Toque para ver detalle</small>
+          </div>
+        </button>
+      </article>
+
+      <article class="card menu-card" data-category="combos">
+        <h2>Nuestros Combos</h2>
+        <button class="item menu-item" data-name="Combo Individual" data-price="Q90.00" data-desc="1 Orden de Tacos Dorados + 1 Café de la Casa." data-icon="taco-img" data-img="assets/menu-tacos.png">
+          <span class="icon"><img class="menu-taco-icon" src="assets/menu-tacos.png" alt="Tacos"></span>
+          <div>
+            <h3>Combo Individual <strong>Q90.00</strong></h3>
+            <p>1 Orden de Tacos Dorados + 1 Café de la Casa.</p>
+            <small>Toque para ver detalle</small>
+          </div>
+        </button>
+        <button class="item menu-item" data-name="Combo Pareja" data-price="Q125.00" data-desc="2 Órdenes de Tacos Dorados + 2 Cafés de la Casa." data-icon="taco-img" data-img="assets/menu-tacos.png">
+          <span class="icon"><img class="menu-taco-icon" src="assets/menu-tacos.png" alt="Tacos"></span>
+          <div>
+            <h3>Combo Pareja <strong>Q125.00</strong></h3>
+            <p>2 Órdenes de Tacos Dorados + 2 Cafés de la Casa.</p>
+            <small>Toque para ver detalle</small>
+          </div>
+        </button>
+        <button class="item menu-item" data-name="Paquete Familiar" data-price="Q150.00" data-desc="4 Órdenes de Tacos Dorados + 4 Cafés de la Casa." data-icon="taco-img" data-img="assets/menu-tacos.png">
+          <span class="icon"><img class="menu-taco-icon" src="assets/menu-tacos.png" alt="Tacos"></span>
+          <div>
+            <h3>Paquete Familiar <strong>Q150.00</strong></h3>
+            <p>4 Órdenes de Tacos Dorados + 4 Cafés de la Casa.</p>
+            <small>Toque para ver detalle</small>
+          </div>
+        </button>
+      </article>
+
+      <article class="card extras menu-card" data-category="extras">
+        <h2>Extras</h2>
+        <button class="extra-pill menu-item" data-name="Salsa de Tomate Adicional" data-price="Q15.00" data-desc="Porción adicional de salsa de tomate de la casa." data-icon="🍅"><span>🍅</span> Salsa de Tomate Adicional - Q15.00</button>
+        <button class="extra-pill menu-item" data-name="Extra Queso Espolvoreado" data-price="Q20.00" data-desc="Queso fresco espolvoreado adicional para acompañar sus tacos." data-icon="🧀"><span>🧀</span> Extra Queso Espolvoreado - Q20.00</button>
+      </article>
+    </section>
+
+    <section class="game-divider">
+      <div class="divider-line"></div>
+      <div class="divider-badge">🎉 Mini juego del restaurante 🎉</div>
+      <p>Baje, gire la ruleta y pruebe su suerte.</p>
+    </section>
+
+    <section class="roulette-section">
+      <h2>Ruleta de la Suerte</h2>
+      <p class="instructions">Presione girar. Las casillas vacías no tienen premio.</p>
+
+      <div class="wheel-area">
+        <div class="pointer"></div>
+        <div class="wheel" id="wheel">
+          <div class="sector-img img1"><img src="assets/maracas.png" alt="Premio maracas"></div>
+          <div class="sector-img img2"><img src="assets/sombrero.png" alt="Premio sombrero"></div>
+          <div class="sector-img img3"><img src="assets/taco.png" alt="Premio taco"></div>
+          <div class="sector-img img4"><img src="assets/cactus.png" alt="Premio cactus"></div>
+          <div class="sector-img img5"><img src="assets/pinata.png" alt="Premio piñata"></div>
+          <div class="sector-img img6"><img src="assets/guitarra.png" alt="Premio guitarra"></div>
+          <div class="center-dot">★</div>
+        </div>
+        <div class="result-pop" id="resultPop">
+          <div class="pop-img-wrap" id="popImgWrap"><img id="popPrizeImg" src="" alt="Premio ganado"></div>
+          <h3 id="resultTitle">¡Ganaste!</h3>
+          <p id="resultText">Premio</p>
+          <button id="closePop">Aceptar</button>
+        </div>
+      </div>
+
+      <button class="spin-btn" id="spinBtn">Girar</button>
+      <p class="game-note">✨ Si cae en una imagen, hay premio. Si cae en una casilla vacía, intente de nuevo.</p>
+    </section>
+  </main>
+
+  <div class="menu-modal" id="menuModal" aria-hidden="true">
+    <div class="menu-modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Cerrar">×</button>
+      <div class="modal-icon" id="modalIcon">🌮</div>
+      <h3 id="modalName">Producto</h3>
+      <strong id="modalPrice">Q0.00</strong>
+      <p id="modalDesc">Descripción</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    © 2026 El Rincón del Taco | Proyecto universitario Mercadotecnia III
+  </footer>
+
+  <canvas id="confetti"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
