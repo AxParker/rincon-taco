@@ -12,23 +12,17 @@ const ctx = canvas.getContext('2d');
 let currentRotation = 0;
 let spinning = false;
 
-// 12 casillas: premio, blanco, premio, blanco...
-// No mostramos nombres de premios para evitar confusión: solo imagen + mensaje general.
+// Nueva ruleta: 8 casillas grandes.
+// 6 premios con imagen + 2 espacios en blanco.
 const sectors = [
-  // Este orden coincide exactamente con las imágenes colocadas en la ruleta.
-  // Índices pares = imagen/premio. Índices impares = casilla vacía.
   { prize: true, img: 'assets/maracas.png' },
   { prize: false },
-  { prize: true, img: 'assets/sombrero.png' },
-  { prize: false },
+  { prize: true, img: 'assets/cactus.png' },
+  { prize: true, img: 'assets/pinata.png' },
   { prize: true, img: 'assets/taco.png' },
   { prize: false },
-  { prize: true, img: 'assets/cactus.png' },
-  { prize: false },
-  { prize: true, img: 'assets/pinata.png' },
-  { prize: false },
   { prize: true, img: 'assets/guitarra.png' },
-  { prize: false }
+  { prize: true, img: 'assets/sombrero.png' }
 ];
 
 function spinWheel() {
