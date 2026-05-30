@@ -233,27 +233,108 @@
   .menu-taco-icon{width:50px;height:36px;}
 }
 
-/* Ajustes para teléfonos */
-@media (max-width: 768px) {
 
-  .wheel-container,
-  .wheel {
-    width: 320px !important;
-    height: 320px !important;
+/* === Ruleta v11: 8 casillas grandes, 6 premios y 2 espacios en blanco === */
+.wheel-area{
+  width:min(90vw,640px);
+  height:min(90vw,640px);
+  --prize-radius:clamp(150px,32vw,225px);
+}
+.wheel{
+  background:conic-gradient(from 0deg,
+    #fff8d7 0deg 45deg,
+    #efd788 45deg 90deg,
+    #fff8d7 90deg 135deg,
+    #efd788 135deg 180deg,
+    #fff8d7 180deg 225deg,
+    #efd788 225deg 270deg,
+    #fff8d7 270deg 315deg,
+    #efd788 315deg 360deg
+  ) !important;
+}
+.wheel:after{
+  background:repeating-conic-gradient(from 0deg, transparent 0deg 44.2deg, #7c321f 44.2deg 45deg) !important;
+}
+.sector-img{
+  width:128px;
+  height:128px;
+  margin:-64px;
+}
+.sector-img img{
+  max-width:132px;
+  max-height:132px;
+  object-fit:contain;
+}
+/* Posiciones de las 6 imágenes dentro de 8 casillas: 1 y 5 son espacios vacíos */
+.img1{transform:rotate(22.5deg) translateY(calc(-1 * var(--prize-radius))) rotate(-22.5deg) !important;}
+.img2{transform:rotate(112.5deg) translateY(calc(-1 * var(--prize-radius))) rotate(-112.5deg) !important;}
+.img3{transform:rotate(157.5deg) translateY(calc(-1 * var(--prize-radius))) rotate(-157.5deg) !important;}
+.img4{transform:rotate(202.5deg) translateY(calc(-1 * var(--prize-radius))) rotate(-202.5deg) !important;}
+.img5{transform:rotate(292.5deg) translateY(calc(-1 * var(--prize-radius))) rotate(-292.5deg) !important;}
+.img6{transform:rotate(337.5deg) translateY(calc(-1 * var(--prize-radius))) rotate(-337.5deg) !important;}
+
+@media(max-width:760px){
+  .roulette-section{
+    padding:22px 8px 30px !important;
+    border-width:6px;
+    border-radius:22px;
   }
-
-  .wheel-section h2,
-  .wheel-title {
-    font-size: 2rem !important;
+  .roulette-section h2{
+    font-size:clamp(2.1rem,11vw,3rem) !important;
+    line-height:1.05;
+    margin-bottom:10px;
   }
-
-  .wheel-section {
-    padding: 20px 10px !important;
+  .instructions{
+    font-size:1rem !important;
+    line-height:1.25;
+    padding:0 6px;
   }
-
-  .spin-btn {
-    width: 220px !important;
-    font-size: 1.5rem !important;
+  .wheel-area{
+    width:min(86vw,380px) !important;
+    height:min(86vw,380px) !important;
+    --prize-radius:clamp(108px,29vw,138px);
+    margin:18px auto 18px;
   }
-
+  .wheel{
+    border-width:12px;
+    box-shadow:0 0 0 8px #ffe083,0 0 25px #0008 inset,0 12px 24px #0007;
+  }
+  .pointer{
+    border-left-width:22px;
+    border-right-width:22px;
+    border-top-width:56px;
+    top:-2px;
+  }
+  .sector-img{
+    width:74px !important;
+    height:74px !important;
+    margin:-37px !important;
+  }
+  .sector-img img{
+    max-width:78px !important;
+    max-height:78px !important;
+  }
+  .center-dot{
+    width:76px !important;
+    height:76px !important;
+    font-size:1.8rem !important;
+    border-width:6px;
+  }
+  .spin-btn{
+    font-size:1.35rem !important;
+    padding:12px 42px !important;
+    border-radius:15px;
+  }
+  .game-note{
+    font-size:.92rem !important;
+    line-height:1.25;
+    margin-top:14px;
+  }
+  .result-pop{
+    width:min(86%,330px) !important;
+    padding:18px 14px !important;
+    border-width:5px;
+  }
+  .result-pop h3{font-size:1.9rem !important;}
+  .result-pop p{font-size:1.05rem !important;}
 }
